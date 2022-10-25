@@ -2,9 +2,10 @@
 
 ## JavaScript
 
-This study has been developed in a conjunction with a book "JavaScript - O Guia Definitivo" with a purpose to learn more about the using of JavaScript.
+## Purpose this
+This study has been developed in a conjunction with a book "JavaScript - O Guia Definitivo" and "Use your head!Javascript" with a purpose to learn more about the using of JavaScript.
 
-Exercise["./exercise/objectsPt1.js"]
+
 
 ### Reserved Words
 ```shell
