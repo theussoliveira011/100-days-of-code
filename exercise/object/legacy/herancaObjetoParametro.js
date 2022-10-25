@@ -90,7 +90,6 @@ let person1 = new Person("Tammi", "Smith", 17, "female", [
 ///////////////// START FROM HERE //////////////////////
 // Legacy object with arguments
 
-
 // Much work
 /*function Teacher(first, last, age, gender, interests, subject){
    this.name = {
@@ -105,26 +104,103 @@ let person1 = new Person("Tammi", "Smith", 17, "female", [
 */
 
 // Less work, more eficience to read the code.
-function Teacher(first, last, age, gender, interests, subject){
-
+function Teacher(first, last, age, gender, interests, subject) {
   //call() permit call a function definite in other scope, but in the  current scope.
-  
+
   Person.call(this, first, last, age, gender, interests);
-  // ********First argument `this` specific the value of a function. The rest must be call. 
+  // ********First argument `this` specific the value of a function. The rest must be call.
   this.subject = subject;
 }
 
 /* Define a prototip and reference of constructor of Teacher()*/
 
-// Create a object `Person` with the same value of `Teacher` Object. 
+// Create a object `Person` with the same value of `Teacher` Object.
 
 // The proprierties of `constructor` of `Teacher.prototype` now is equal  `Person()`
 Teacher.prototype = Object.create(Person.prototype);
 //In console `Teacher.prototype.constructor` return `Person()`
-Object.defineProperty(Teacher.prototype, 'constructor', {
+Object.defineProperty(Teacher.prototype, "constructor", {
   value: Teacher,
   enumerable: false, // so that it does not apper in 'for in' loop
-  writable: true
+  writable: true,
 });
 // In console `Teacher.prototype.constructor` return `Teacher()`
 
+// Gift a Teacher() a new function greeting()
+
+Teacher.prototype.greeting = () => {
+  let prefix;
+
+  if (
+    this.gender === "male" ||
+    this.gender === "Male" ||
+    this.gender === "m" ||
+    this.gender === "M"
+  ) {
+    prefix = "Mr";
+  } else if (
+    this.gender === "female" ||
+    this.gender === "Female" ||
+    this.gender === "f" ||
+    this.gender === "F"
+  ) {
+    prefix = "Mrs.";
+  } else {
+    prefix = "Mx.";
+  }
+
+  alert(
+    "Hello. My Name is " +
+      prefix +
+      " " +
+      this.name.first +
+      ", and I teach" +
+      this.subject +
+      "."
+  );
+};
+
+// Create a instance of Teacher()
+let teacher1 = new Teacher(
+  "Dave",
+  "Griffiths",
+  31,
+  "male",
+  ["football", "cookery"],
+  "mathematics"
+);
+
+// Practice
+
+function Student(first, last, age, gender, interests) {
+  Person.call(this, first, last, age, gender, interests);
+}
+
+Student.prototype.greeting = () => {
+  let prefix;
+
+  if (
+    this.gender === "male" ||
+    this.gender === "Male" ||
+    this.gender === "m" ||
+    this.gender === "M"
+  ) {
+    prefix = "He calls";
+  } else if (
+    this.gender === "female" ||
+    this.gender === "Female" ||
+    this.gender === "f" ||
+    this.gender === "F"
+  ) {
+    prefix = "She calls";
+  } else {
+    prefix = "Calls";
+  }
+
+  alert(prefix + " " + this.name.first);
+};
+
+let student1 = new Student("Dave", "Griffiths", 31, "male", [
+  "football",
+  "cookery",
+]);
