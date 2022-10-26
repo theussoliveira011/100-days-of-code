@@ -1,11 +1,9 @@
 # 100-days-of-code
 
-## JavaScript
+# JavaScript
 
 ## Purpose this
 This study has been developed in a conjunction with a book "JavaScript - O Guia Definitivo", "Use your head!Javascript" and the MDN Documentation with a purpose to learn more about the using of JavaScript.
-
-
 
 ### Reserved Words
 ```shell
@@ -22,7 +20,7 @@ This study has been developed in a conjunction with a book "JavaScript - O Guia 
   yield arguments
 ```
 
-### Function `Math` JavaScript
+### `Math` JavaScript
 ```javascript
   Math.pow(2,53) // 9007199254740992 -> The same thing: 2 ** 53;
   Math.round(.6) // 1 -> around to the int more close.
@@ -39,4 +37,41 @@ This study has been developed in a conjunction with a book "JavaScript - O Guia 
   Math.log(10) // Log natural of 10
   Math.log(100)/Math.LN10 // Log of base 10 of 100
   Math.exp(3) // Math.E³
+```
+
+### `Strings` JavaScript
+
+```javascript
+let s = "hello, world";
+
+s.charAt(0); // -> "h" the first caractere
+s.charAt(s.length - 1); // -> "d" the last caractere
+s.substring(1, 4); // -> "ell": the 2°, 3° and 4° caractere
+s.slice(1, 4); // -> "ell"
+s.slice(-3); // -> "rld"
+s.indexOf("l"); // -> 2 the position of first letter 'l'
+s.lastIndexOf("l"); // -> 10 the last position
+s.indexOf("l", 3); // -> 3 the position of first letter
+s.split(", "); // -> ["hello", "world"]
+s.replace("h", "H"); // -> "Hello World"
+s.toUpperCase(); // -> "HELLO WORLD"
+s[0]; // -> 'h'
+s[s.length-1]; // -> 'd'
+```
+
+### `Date` JavaScript
+```javascript
+let later = new Date(2010, 0, 1, 17, 10, 30); // The same day, 5:10:30 afternoon, local hour.
+
+later.getFullYear(); // 2010
+later.getMonth(); // 0
+later.getDate(); // 1
+later.getDay(); // 5
+later.getHours(); // 17
+later.getUTCHours(); // Hour em UTC
+later.toString(); // "Fri, 01 Jan 2010 19:10:30 GMT"
+later.toUTCString(); // "Fri, 01 Jan 2010 19:10:30 GMT"
+later.toLocaleDateString(); // "01/01/2010"
+later.toLocaleTimeString(); // "05:10:30 PM"
+later.toISOString(); // "2010-01-02T01:10:000Z"
 ```
