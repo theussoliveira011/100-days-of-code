@@ -3,7 +3,7 @@
 ## JavaScript
 
 ## Purpose this
-This study has been developed in a conjunction with a book "JavaScript - O Guia Definitivo" and "Use your head!Javascript" with a purpose to learn more about the using of JavaScript.
+This study has been developed in a conjunction with a book "JavaScript - O Guia Definitivo", "Use your head!Javascript" and the MDN Documentation with a purpose to learn more about the using of JavaScript.
 
 
 
