@@ -118,6 +118,7 @@ function Teacher(first, last, age, gender, interests, subject) {
 
 // The proprierties of `constructor` of `Teacher.prototype` now is equal  `Person()`
 Teacher.prototype = Object.create(Person.prototype);
+
 //In console `Teacher.prototype.constructor` return `Person()`
 Object.defineProperty(Teacher.prototype, "constructor", {
   value: Teacher,
@@ -175,6 +176,16 @@ let teacher1 = new Teacher(
 function Student(first, last, age, gender, interests) {
   Person.call(this, first, last, age, gender, interests);
 }
+
+// The property `constructor` now is the same of `Person` 
+Student.prototype = Object.create(Person.prototype);
+
+// Define property `constructor` of `Student` 
+Object.defineProperty(Student.prototype, "constructor", {
+  value: Student,
+  enumerable: false, // so that it does not apper in 'for in' loop
+  writable: true,
+});
 
 Student.prototype.greeting = () => {
   let prefix;
