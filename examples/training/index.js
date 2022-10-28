@@ -24,17 +24,31 @@ const catalogo = [{
   notas: [8, 9, 10, 5]
 }];
 
-function adicionarIndividuo(id, name, age, gender, notas){
-    return catalogo.push({
-        id: id,
-        name: name,
-        age: age,
-        gender: gender,
-        notas: notas
-      });
+function Aluno(id, name, age, gender, notas){
+  this.id = id;
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+  this.notas = notas;
 }
+/* nova */
+var aluno1 = new Aluno(5, "Ricardo", 28, "male", [9, 5, 8, 6]);
+var aluno2 = new Aluno(6, "Richard", 24, "male", [2, 6, 9, 7]);
+catalogo.push(aluno1, aluno2);
+// console.log(catalogo);
 
-adicionarIndividuo(5, "Jefferson", 22, "no-gender", [8, 8, 9, 5], catalogo);
+/*  Obsoleta, nova function acima! */
+// function adicionarIndividuo(id, name, age, gender, notas){
+//     return catalogo.push({
+//         id: id,
+//         name: name,
+//         age: age,
+//         gender: gender,
+//         notas: notas
+//       });
+// }
+
+// adicionarIndividuo(5, "Jefferson", 22, "no-gender", [8, 8, 9, 5], catalogo);
 // console.log(catalogo); // {name: 'Jefferson', age: 22, gender: 'no-gender'}
 
 function buscarIndividuo(array, id){
@@ -49,6 +63,8 @@ function buscarIndividuo(array, id){
   // return false;
 }
 
+console.log(buscarIndividuo(catalogo, 5));
+
 function calcularMedia(array, id){
   let sunrise = buscarIndividuo(array, id);
   let media = 0;
@@ -57,5 +73,3 @@ function calcularMedia(array, id){
   } 
   return media / 4;
 }
-
-console.log(calcularMedia(catalogo, 4));
