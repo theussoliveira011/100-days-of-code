@@ -71,5 +71,15 @@ function calcularMedia(array, id){
   for(let i = 0; i < sunrise.notas.length; i++){
     media += sunrise.notas[i];
   } 
-  return media / 4;
+  media /= 4;
+  if(sunrise.media >= 10){
+    sunrise.media = "Tu passou papai com distinção \n" + "Nota: " + media;
+  } else if(sunrise.media >= 7){
+    sunrise.media = "Tu passou com: " + media;
+  } else {
+    sunrise.media = "Você reprovou";
+  }
+  return sunrise;
 }
+console.log(calcularMedia(catalogo, 5));
+// console.log(catalogo);
