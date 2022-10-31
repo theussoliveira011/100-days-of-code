@@ -1,4 +1,4 @@
-module.exports = function Aluno(id, name, age, gender, notas){
+module.exports = function Pessoa(id, name, age, gender, notas){
   this.id = id;
   this.name = name;
   this.age = age;
