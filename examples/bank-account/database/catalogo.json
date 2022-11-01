@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": 7,
+    "name": "Jefferson",
+    "surname": "Matheus",
+    "numberCont": 1,
+    "cpf": "000000001",
+    "dateCreation": "2022-11-01T19:05:46.625Z"
+  },
+  {
+    "id": 3,
+    "name": "Jefferson",
+    "surname": "Matheus",
+    "numberCont": 1,
+    "cpf": "000000001",
+    "dateCreation": "2022-11-01T19:05:46.681Z"
+  },
+  {
+    "id": 0,
+    "name": "Jefferson",
+    "surname": "Matheus",
+    "numberCont": 1,
+    "cpf": "000000001",
+    "dateCreation": "2022-11-01T19:05:46.774Z"
+  },
+  {
+    "id": 9,
+    "name": "Ricardo",
+    "surname": "Kbleber",
+    "numberCont": 8,
+    "cpf": "55588825",
+    "dateCreation": "2022-11-01T19:09:24.081Z",
+    "valorEmprestado": 98
+  }
+]
