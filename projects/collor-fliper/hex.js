@@ -20,7 +20,7 @@ btn.addEventListener('click', () =>{
   // editada o background do body ao valor da hexColor
   document.body.style.backgroundColor = hexColor;
 });
-
+//Gera numeros aleatorios para abastecer o hexcolor
 function getRandomNumber(){
   return Math.floor(Math.random() * hex.length);
 }
