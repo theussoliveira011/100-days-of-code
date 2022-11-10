@@ -75,3 +75,79 @@ later.toLocaleDateString(); // "01/01/2010"
 later.toLocaleTimeString(); // "05:10:30 PM"
 later.toISOString(); // "2010-01-02T01:10:000Z"
 ```
+
+### `ParseInt()` and `ParseFloat` 
+```javascript
+  parseInt("3 blind mice") // => 3
+  parseFloat("3.14 meters") // => 3.14
+  // parseInt() accept a second argument that is the base
+  parseInt("11", 2) // => 3 (1*2+1);
+  parseInt("ff", 16) // => 255 (15*16+15);
+```
+
+### Convert object in a value primitive
+```javascript
+  // toString() method.
+  ({x:1, y: 2}).toString(); // => "[object Object]"
+  [1,2,3].toString() // => "1,2,3"
+  (function(x){f(x);}).toString() // => "function(x){\n f(x);\n";
+  /\d+/g.toString() // => "/\\d+/g"
+  new Date(2010, 0, 1).toString() // => "Sexta-Feira 01 de Janeiro de 2010 00:00:00 GMT-0800 (PST)"
+  // valueOf() method
+  var d = new Date(2010, 0, 1);
+  d.valueOf() // => 126233280000
+  
+  var now = new Date();
+  typeof(now + 1) // => "string": + convert dates to strings
+  typeof(now - 1) // => "number": - use convertion of object for number.
+  now == now.toString() // => "true": convertions of strings implict and explicit
+  now > (now - 1) // => "true": convert a object date in number.
+```
+
+### Scope of variables
+```javascript
+var scope = "global";
+function checkScope(){
+  var scope = "local";
+  return scope; // => return the value local not the global.
+}
+checkScope(); // => "local"
+///////////////////////////////////////////////////////////
+var scope = "global scope";
+function checkScope(){
+  var scope = "local scope";
+  function nested(){
+    var scope = "nested scope";
+    return scope;
+  }
+  return nested();
+}
+checkScope(); // => "nested scope"
+///////////////////////////////////////////////////////////
+var scope = "global";
+function f(){
+  console.log(scope); // => "undefined"
+  var scope = "local";
+  console.log(scope); // => "local"
+}
+///////////////////////////////////////////////////////////
+function f(){
+  var scope;
+  console.log(scope); // => "undefined"
+  scope = "local";
+  console.log(scope); // => "local"
+}
+```
+
+### Variables how propriets
+```javascript
+var truevar = 1; // => don't be exclude with 'delete'
+
+fakevar = 2; // => can be exclude
+/*`this` permit specify the object `global`*/
+this.fakevar2 = 3; // => make the same thing.
+
+delete truevar // => false
+delete fakevar // => true
+delete this.fakevar2 // => true
+```
