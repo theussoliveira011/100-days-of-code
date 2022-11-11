@@ -151,3 +151,48 @@ delete truevar // => false
 delete fakevar // => true
 delete this.fakevar2 // => true
 ```
+
+### Operator `in`
+ - Sintax => [string] `in` [object]
+```javascript
+  var point = {x:1, y:2};
+  'x' in point // => return true, because exist a propriert 'x' in object 'point'
+  'z' in point // => return false, don't exist 'z' in object 'point'
+  'toString' in point // => return true.
+  var data = [7,8,9];
+  '0' in data // => return true;
+  1 in data // => return true; operator `in` convert numbers in strings
+  3 in data // => return false;
+```
+
+### Operator `instanceof`
+ - Sintax => [object] `instanceof` [object]
+```javascript
+  var d = new Date();
+  d instanceof Date; // => return true;
+  d instanceof Object; // => return true;
+  d instanceof Number; // => return false;
+  var a = [1, 2, 3];
+  a instanceof Array; // => return true;
+  a instanceof Object; // => return true;
+  a instanceof RegExp; // => return false;
+```
+
+### Operator `delete`
+ - Sintax `delete` [Lvalue]
+```javascript
+  var o = {x: 1, y: 2};
+  delete o.x; // => true;
+  'x' in o // => false;
+
+  var a = [1, 2, 3];
+  delete a[2]; // => true;
+  2 in a // => false;
+  a.length // => 3;
+
+  var o = {x: 1, y: 2};
+  delete o.x; // => true;
+  typeof o.x; // => undefined
+  delete o.x; // => true;
+  delete o; // => false, `delete` can't exclude variable 
+```
