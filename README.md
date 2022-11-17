@@ -196,3 +196,6 @@ delete this.fakevar2 // => true
   delete o.x; // => true;
   delete o; // => false, `delete` can't exclude variable 
 ```
+
+### `For/in`
+--- Sintax `for`([variable] `in` [object])
